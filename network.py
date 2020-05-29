@@ -1,4 +1,4 @@
-# adding Pooling Layers
+# program to build CNNs
 
 import numpy as np
 import torch
@@ -14,15 +14,15 @@ class Network(nn.Module):
         self,
         n_channels, #int
         image_size, #int
-        conv_layers, #list of int
-        kernel, #list of int [kernel_size, kernel_stride]
-        padding, #int
-        dropout_prob, #float <=1
-        fc_layers, #list of int
+        conv_layers = [16, 32, 64], #list of int
+        kernel = [5, 1], #list of int [kernel_size, kernel_stride]
+        padding = 0, #int
+        dropout_prob = 0.0, #float <=1
+        fc_layers, [32, 16], #list of int
         classes, #list of int
-        activation_layer, #torch.nn object
-        learning_rate, #float
-        epochs #int
+        activation_layer = torch.nn.ReLU(), #torch.nn object
+        learning_rate = 0.001, #float
+        epochs = 10 #int
         ):
 
         super(Network, self).__init__()
